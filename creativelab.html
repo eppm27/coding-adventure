@@ -1,0 +1,109 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#2449e8">
+    <meta name="description" content="Play coding challenges with explanations, scores, and personal records.">
+    <title>Creative Lab — Coding Adventure</title>
+    <link rel="icon" href="assets/mascot.svg" type="image/svg+xml">
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body data-mode="lab">
+    <a class="skip-link" href="#main">Skip to game</a>
+    <header class="topbar">
+<a class="brand" href="index.html" aria-label="Coding Adventure home">
+<span class="brand-coding">
+<b>C</b>
+<b>O</b>
+<b>D</b>
+<b>I</b>
+<b>N</b>
+<b>G</b>
+</span>
+<span class="brand-adventure">ADVENTURE</span>
+</a>
+<a class="button home-button" href="index.html">⌂ Home</a>
+</header>
+    <main id="main" tabindex="-1">
+<div class="game-heading">
+<div>
+<p class="eyebrow">LEVEL 5 · CREATIVE LAB</p>
+<h1>Your ideas. Pip’s adventure.</h1>
+</div>
+<button id="reset-lab" class="button secondary">Reset lab</button>
+</div>
+<div class="lab-layout">
+<section class="lab-controls" aria-labelledby="program-title">
+<h2 id="program-title">Give Pip a plan</h2>
+<p class="scoring-note">Add up to 8 actions. Pip follows them from top to bottom.</p>
+<fieldset id="lab-settings">
+<label for="background">Choose a world</label>
+<select id="background">
+<option value="forest">Adventure forest</option>
+<option value="beach">Sunny beach</option>
+<option value="sunset">Sunset meadow</option>
+</select>
+<label for="character">Choose a character</label>
+<select id="character">
+<option value="mascot">Pip the explorer</option>
+<option value="bug">A friendly bug</option>
+</select>
+<span id="actions-label" class="control-label">Add an action</span>
+<div id="lab-add" class="lab-add" role="group" aria-labelledby="actions-label">
+</div>
+<ol id="lab-program" class="lab-program" aria-label="Your program">
+</ol>
+<p id="empty-program" class="empty-program">Your adventure starts with an action. Pick one above!</p>
+<label for="repeat">Repeat the whole plan</label>
+<select id="repeat">
+<option value="1">1 time</option>
+<option value="2">2 times</option>
+<option value="3">3 times</option>
+<option value="4">4 times</option>
+</select>
+<button id="starter" class="button secondary" type="button">Try a starter plan</button>
+</fieldset>
+<button id="mobile-run" class="button lab-mobile-run" disabled>Run & preview ↑</button>
+</section>
+<section class="lab-preview" aria-label="Your creation">
+<div class="lab-goal">
+<h2>Your first creation</h2>
+<p>Use <strong>3 different actions</strong>, then run your plan. After that, keep experimenting!</p>
+</div>
+<div id="lab-stage" class="lab-stage">
+<div id="lab-character" class="lab-character">
+<span id="lab-speech" class="lab-speech" hidden>
+</span>
+<img id="character-image" src="assets/mascot.svg" alt="Pip, waiting for your plan" width="105" height="115">
+</div>
+</div>
+<div id="lab-log" class="lab-log" role="status" aria-live="polite">Ready when you are. Add an action to begin.</div>
+<div class="lab-actions">
+<button id="run" class="button" disabled>Run my plan ▶</button>
+<button id="stop" class="button secondary" disabled>Stop ■</button>
+</div>
+<section id="lab-done" class="lab-done" hidden aria-labelledby="lab-done-title">
+<h2 id="lab-done-title">★ Creation complete!</h2>
+<p>You made a little program. Change a step and see what happens next.</p>
+<p id="lab-saved" class="scoring-note">
+</p>
+<a class="button" href="index.html#games">Back to the adventure map →</a>
+</section>
+</section>
+</div>
+<noscript>
+<p>Enable JavaScript to create a program.</p>
+</noscript>
+</main>
+    <footer>
+      <span>A personal continuation of a team hackathon project.</span>
+      <a href="https://github.com/Milktea0408/Hackathon">Original team & repository ↗</a>
+    </footer>
+    
+  
+
+<script type="module" src="scripts/creative-lab.js">
+</script>
+</body>
+</html>

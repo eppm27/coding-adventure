@@ -1,49 +1,156 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Choose Your Adventure</title>
-    <link rel="stylesheet" href="style-chooseyouradventure.css">
-    <link rel="icon" type="image/png" href="images/man-climbing.png">
-</head>
-<body>
-    <div class="game-container" id="chooseAdventureContainer">
-        <audio id="backgroundMusic" src="music/chooseyouradventure.mp3" loop></audio>
-    </div>
-    <button id="homeButton" onclick="goHome()">Home 🏚️</button>
-    <div id="volumeControl">
-        <label for="volume">Volume:</label>
-        <input type="range" id="volume" min="0" max="1" step="0.01" value="0.5">
-    </div>
-
-    <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            const backgroundMusic = document.getElementById('backgroundMusic');
-            
-            // Ensure the audio file is ready before attempting to play
-            backgroundMusic.addEventListener('canplaythrough', function() {
-                backgroundMusic.play().catch(error => {
-                    console.error('Playback failed:', error);
-                });
-            });
-
-            const volumeControl = document.getElementById('volume');
-            volumeControl.addEventListener('input', function() {
-                backgroundMusic.volume = this.value;
-            });
-
-            initChooseYourAdventure();
-        });
-
-        function goHome() {
-            const backgroundMusic = document.getElementById('backgroundMusic');
-            backgroundMusic.pause();
-            backgroundMusic.currentTime = 0;
-            window.location.href = 'index.html';
-        }
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#2449e8">
+    <meta name="description" content="Play coding challenges with explanations, scores, and personal records.">
+    <title>Choose Your Adventure — Coding Adventure</title>
+    <link rel="icon" href="assets/mascot.svg" type="image/svg+xml">
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body data-mode="adventure">
+    <a class="skip-link" href="#main">Skip to game</a>
+    <header class="topbar">
+<a class="brand" href="index.html" aria-label="Coding Adventure home">
+<span class="brand-coding">
+<b>C</b>
+<b>O</b>
+<b>D</b>
+<b>I</b>
+<b>N</b>
+<b>G</b>
+</span>
+<span class="brand-adventure">ADVENTURE</span>
+</a>
+<a class="button home-button" href="index.html">⌂ Home</a>
+</header>
+    <main id="main" tabindex="-1">
+      <section id="setup" class="setup-panel">
+        <p class="eyebrow">LEVEL 2 · CHOOSE YOUR PATH</p>
+        <h1>Where will you explore?</h1>
+        <p>Your student club needs a website. Choose where you’ll help.</p>
+        <form id="adventure-form">
+          <fieldset>
+            <legend>01 · Choose your path</legend>
+            <div class="path-options">
+              <label class="choice">
+                <input type="radio" name="path" value="front-end" checked>
+                <span>
+                  <svg class="path-art" viewBox="0 0 240 150" aria-hidden="true">
+<use href="assets/levels.svg#lab">
+</use>
+</svg>
+<strong>Front-End Path</strong>
+                  <small>Build what people see and interact with.</small>
+                </span>
+              </label>
+              <label class="choice">
+                <input type="radio" name="path" value="back-end">
+                <span>
+                  <svg class="path-art" viewBox="0 0 240 150" aria-hidden="true">
+<use href="assets/levels.svg#debug">
+</use>
+</svg>
+<strong>Back-End Path</strong>
+                  <small>Power the data and services behind it.</small>
+                </span>
+              </label>
+            </div>
+          </fieldset>
+          <fieldset>
+            <legend>02 · Choose your difficulty</legend>
+            <div class="difficulty-options">
+              <label class="choice">
+                <input type="radio" name="difficulty" value="beginner" checked>
+                <span>
+                  <strong>
+<span aria-hidden="true">★</span> Beginner</strong>
+                  <small>Learn the essentials</small>
+                </span>
+              </label>
+              <label class="choice">
+                <input type="radio" name="difficulty" value="intermediate">
+                <span>
+                  <strong>
+<span aria-hidden="true">★★</span> Intermediate</strong>
+                  <small>Connect the pieces</small>
+                </span>
+              </label>
+              <label class="choice">
+                <input type="radio" name="difficulty" value="advanced">
+                <span>
+                  <strong>
+<span aria-hidden="true">★★★</span> Advanced</strong>
+                  <small>Think a step further</small>
+                </span>
+              </label>
+            </div>
+          </fieldset>
+          <div class="setup-bottom">
+            <p class="scoring-note">5 stages · No timer · Explanations included<br>100 points + 50 for each first-try answer</p>
+            <button id="start" class="button" type="submit">Start adventure →</button>
+          </div>
+        </form>
+      </section>
+      <section id="play" hidden>
+        <div class="game-heading">
+          <div>
+            <p class="eyebrow" id="mission-label">
+            </p>
+            <h1 id="play-title">
+            </h1>
+          </div>
+          <button class="button secondary" id="restart">Restart level</button>
+        </div>
+        <div class="hud" aria-label="Game statistics">
+          <div>
+            <span>SCORE</span>
+            <strong id="score">0</strong>
+          </div>
+          <div>
+            <span>STREAK</span>
+            <strong id="streak">0</strong>
+          </div>
+          <div>
+            <span id="progress-label">PROGRESS</span>
+            <strong id="progress">0 / 6</strong>
+          </div>
+          <div>
+            <span>PERSONAL BEST</span>
+            <strong id="best">0</strong>
+          </div>
+        </div>
+        <progress id="progress-bar" value="0" max="6" aria-label="Level progress">
+        </progress>
+        <div id="mode-content">
+        </div>
+      </section>
+      <section id="result" class="result-panel" hidden aria-labelledby="result-title">
+      </section>
+      <section id="data-error" class="setup-panel" hidden>
+        <p class="eyebrow">MISSION UNAVAILABLE</p>
+        <h1>We couldn’t load this challenge.</h1>
+        <p>Choose another mission or reload to try again.</p>
+        <a class="button" href="index.html">Choose another level</a>
+      </section>
+      <dialog id="question-dialog" aria-labelledby="dialog-title">
+        <div class="dialog-top">
+          <span class="eyebrow">BUG CHALLENGE!</span>
+          <button id="close-dialog" class="icon-button" aria-label="Close question">×</button>
+        </div>
+        <div id="dialog-content">
+        </div>
+      </dialog>
+      <noscript>
+        <p>This game needs JavaScript enabled. Enable it in your browser, then reload.</p>
+      </noscript>
+    </main>
+    <footer>
+      <span>A personal continuation of a team hackathon project.</span>
+      <a href="https://github.com/Milktea0408/Hackathon">Original team & repository ↗</a>
+    </footer>
+    <script type="module" src="scripts/game.js">
     </script>
-    <script src="datastore.js"></script>
-    <script src="chooseyouradventure.js"></script>
-</body>
+  </body>
 </html>

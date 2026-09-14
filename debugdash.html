@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#2449e8">
+    <meta name="description" content="Play coding challenges with explanations, scores, and personal records.">
+    <title>Debug Dash — Coding Adventure</title>
+    <link rel="icon" href="assets/mascot.svg" type="image/svg+xml">
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body data-mode="debug">
+    <a class="skip-link" href="#main">Skip to game</a>
+    <header class="topbar">
+<a class="brand" href="index.html" aria-label="Coding Adventure home">
+<span class="brand-coding">
+<b>C</b>
+<b>O</b>
+<b>D</b>
+<b>I</b>
+<b>N</b>
+<b>G</b>
+</span>
+<span class="brand-adventure">ADVENTURE</span>
+</a>
+<a class="button home-button" href="index.html">⌂ Home</a>
+</header>
+    <main id="main" tabindex="-1">
+<section id="setup" class="setup-panel escape-setup">
+<p class="eyebrow">LEVEL 4 · DEBUG DASH</p>
+<svg class="level-intro-art" viewBox="0 0 240 150" aria-hidden="true">
+<use href="assets/levels.svg#debug">
+</use>
+</svg>
+<h1>Small bugs. Smart fixes.</h1>
+<p>Read the code and spot the mistake. Fix six bugs, from simple slips to tricky puzzles.</p>
+<p class="scoring-note">100 points per solve + 50 on the first try.<br>No timer. Take a breath and think it through.</p>
+<button id="start" class="button">Start Debug Dash →</button>
+</section>
+<section id="play" hidden>
+<div class="game-heading">
+<div>
+<p class="eyebrow">LEVEL 4 · DEBUG DASH</p>
+<h1>Spot it. Fix it. Keep going.</h1>
+</div>
+<button class="button secondary" id="restart">Restart level</button>
+</div>
+<div class="hud" aria-label="Game statistics">
+<div>
+<span>SCORE</span>
+<strong id="score">0</strong>
+</div>
+<div>
+<span>STREAK</span>
+<strong id="streak">0</strong>
+</div>
+<div>
+<span>PROGRESS</span>
+<strong id="progress">0 / 3</strong>
+</div>
+<div>
+<span>PERSONAL BEST</span>
+<strong id="best">0</strong>
+</div>
+</div>
+<progress id="progress-bar" value="0" max="3" aria-label="Level progress">
+</progress>
+<div id="mode-content">
+</div>
+</section>
+<section id="result" class="result-panel" hidden aria-labelledby="result-title">
+</section>
+<section id="data-error" class="setup-panel" hidden>
+<h1>This challenge needs a reset.</h1>
+<p>We couldn’t load enough challenges. Try another game.</p>
+<a class="button" href="index.html">Choose a game</a>
+</section>
+<noscript>
+<p>Enable JavaScript to play this game.</p>
+</noscript>
+</main>
+    <footer>
+      <span>A personal continuation of a team hackathon project.</span>
+      <a href="https://github.com/Milktea0408/Hackathon">Original team & repository ↗</a>
+    </footer>
+    
+  
+
+<script type="module" src="scripts/debug-dash.js">
+</script>
+</body>
+</html>

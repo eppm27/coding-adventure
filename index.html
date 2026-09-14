@@ -1,44 +1,154 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Coding Adventure</title>
-    <link rel="icon" type="image/png" href="images/house.png">
-    <link rel="stylesheet" href="style-index.css">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#87d6fa">
+<meta name="description" content="Five playful coding games for curious minds. Catch bugs, build code, solve puzzles, and create your own adventure.">
+<title>Coding Adventure — Play. Code. Explore.</title>
+<link rel="icon" href="assets/mascot.svg" type="image/svg+xml">
+<link rel="stylesheet" href="style.css">
 </head>
-<body>
-    <div class="game-container">
-        <audio id="backgroundMusic" src="music/home.mp3" loop></audio>
-        <h1 id="game-title">Coding Adventure</h1>
-        <div id="level-container">
-            <button id="start-escape-room" class="button">Escape Room</button>
-            <button id="start-choose-your-adventure" class="button">Choose Your Adventure</button>
-        </div>
-        <div id="volumeControl">
-            <label for="volume">Volume:</label>
-            <input type="range" id="volume" min="0" max="1" step="0.01" value="0.5">
-        </div>
-    </div>
-
-    <script>
-        window.onload = function() {
-            const backgroundMusic = document.getElementById('backgroundMusic');
-            backgroundMusic.play();
-
-            const volumeControl = document.getElementById('volume');
-            volumeControl.addEventListener('input', function() {
-                backgroundMusic.volume = this.value;
-            });
-        };
-
-        document.getElementById('start-escape-room').addEventListener('click', function() {
-            window.location.href = 'escaperoom.html';
-        });
-
-        document.getElementById('start-choose-your-adventure').addEventListener('click', function() {
-            window.location.href = 'chooseyouradventure.html';
-        });
-    </script>
+<body class="home-world">
+<a class="skip-link" href="#main">Skip to games</a>
+<header class="topbar">
+<a class="brand" href="index.html" aria-label="Coding Adventure home">
+<span class="brand-coding">
+<b>C</b>
+<b>O</b>
+<b>D</b>
+<b>I</b>
+<b>N</b>
+<b>G</b>
+</span>
+<span class="brand-adventure">ADVENTURE</span>
+</a>
+<nav aria-label="Main navigation">
+<a href="index.html" aria-current="page">Home</a>
+<a href="#games">Games</a>
+<a href="#progress">Progress</a>
+<a href="#about">About</a>
+</nav>
+</header>
+<main id="main" tabindex="-1">
+<section class="world-hero">
+<div class="mascot-welcome">
+<span class="speech">Ready to explore?</span>
+<img src="assets/mascot.svg" alt="Pip, a friendly explorer robot with a sprout antenna" width="240" height="250">
+</div>
+<div class="hero-copy">
+<p class="eyebrow">A LITTLE CURIOSITY GOES A LONG WAY</p>
+<h1>
+<span>Play.</span> <span>Code.</span> <span>Explore.</span>
+</h1>
+<p>Fun coding games for curious minds.<br>Made for explorers in Years 7–12.</p>
+<a class="button sunshine" href="#games">Choose a game <span aria-hidden="true">→</span>
+</a>
+</div>
+<div class="world-sign" aria-hidden="true">
+<span>Small steps</span>
+<span>Big discoveries</span>
+</div>
+</section>
+<section id="games" class="game-map" aria-labelledby="games-heading">
+<h2 id="games-heading" class="sr-only">Choose your next adventure</h2>
+<div class="map-trail" aria-hidden="true">
+</div>
+<div class="level-grid">
+<article class="level-stop escape" data-level="escape">
+<span class="level-ribbon">LEVEL 1</span>
+<h2>Escape Room</h2>
+<svg class="level-scene" viewBox="0 0 240 150" aria-hidden="true">
+<use href="assets/levels.svg#escape">
+</use>
+</svg>
+<p>Catch the bugs and solve coding questions.</p>
+<small>6 bugs · Quick play</small>
+<a class="button level-play" href="escaperoom.html" aria-label="Play Escape Room">Play <span aria-hidden="true">→</span>
+</a>
+<span class="level-status">Adventure awaits</span>
+</article>
+<article class="level-stop adventure" data-level="adventure">
+<span class="level-ribbon">LEVEL 2</span>
+<h2>Choose Your Adventure</h2>
+<svg class="level-scene" viewBox="0 0 240 150" aria-hidden="true">
+<use href="assets/levels.svg#adventure">
+</use>
+</svg>
+<p>Pick a path. See where your skills take you.</p>
+<small>2 paths · 3 difficulties</small>
+<a class="button level-play" href="chooseyouradventure.html" aria-label="Play Choose Your Adventure">Play <span aria-hidden="true">→</span>
+</a>
+<span class="level-status">Adventure awaits</span>
+</article>
+<article class="level-stop builder" data-level="builder">
+<span class="level-ribbon">LEVEL 3</span>
+<h2>Code Builder</h2>
+<svg class="level-scene" viewBox="0 0 240 150" aria-hidden="true">
+<use href="assets/levels.svg#builder">
+</use>
+</svg>
+<p>Put the pieces together. Bring code to life.</p>
+<small>3 builds · Order blocks</small>
+<a class="button level-play" href="codebuilder.html" aria-label="Play Code Builder">Play <span aria-hidden="true">→</span>
+</a>
+<span class="level-status">Adventure awaits</span>
+</article>
+<article class="level-stop debug" data-level="debug">
+<span class="level-ribbon">LEVEL 4</span>
+<h2>Debug Dash</h2>
+<svg class="level-scene" viewBox="0 0 240 150" aria-hidden="true">
+<use href="assets/levels.svg#debug">
+</use>
+</svg>
+<p>Spot the mistake. Get the code back on track.</p>
+<small>6 fixes · Find the bug</small>
+<a class="button level-play" href="debugdash.html" aria-label="Play Debug Dash">Play <span aria-hidden="true">→</span>
+</a>
+<span class="level-status">Adventure awaits</span>
+</article>
+<article class="level-stop lab" data-level="lab">
+<span class="level-ribbon">LEVEL 5</span>
+<h2>Creative Lab</h2>
+<svg class="level-scene" viewBox="0 0 240 150" aria-hidden="true">
+<use href="assets/levels.svg#lab">
+</use>
+</svg>
+<p>Make Pip move, jump, and say hello.</p>
+<small>Your ideas · Free play</small>
+<a class="button level-play" href="creativelab.html" aria-label="Play Creative Lab">Play <span aria-hidden="true">→</span>
+</a>
+<span class="level-status">Adventure awaits</span>
+</article>
+</div>
+</section>
+<section id="progress" class="progress-camp" aria-labelledby="progress-title">
+<div>
+<p class="eyebrow">YOUR EXPLORER JOURNAL</p>
+<h2 id="progress-title">
+<span id="completed-count">0</span> of 5 adventures explored</h2>
+<p>Play in any order. Every little step counts.</p>
+</div>
+<div id="completion-badges" class="completion-badges" aria-label="Completed levels">
+</div>
+<div class="personal-records">
+<span>Best score <strong id="score-best">0</strong>
+</span>
+<span>Best streak <strong id="streak-best">0</strong>
+</span>
+<small>Saved on this browser</small>
+</div>
+</section>
+<section id="about" class="about-camp">
+<h2>Curiosity is your superpower.</h2>
+<p>Try something. Make a mistake. Try again. Pip will be right here.</p>
+<p class="origin">A personal continuation of a collaborative hackathon project.<br>
+<a href="https://github.com/Milktea0408/Hackathon">Meet the original team & view the repository ↗</a>
+</p>
+</section>
+</main>
+<footer>Made for learning, built on teamwork. No accounts. No downloads. Just play.</footer>
+<script type="module" src="scripts/home.js">
+</script>
 </body>
 </html>
