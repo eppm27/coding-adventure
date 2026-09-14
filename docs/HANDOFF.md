@@ -1,5 +1,7 @@
 # Personal-version handoff
 
+Live game: [Coding Adventure](https://coding-adventure-sigma.vercel.app/). The user deployed this personal version to Vercel.
+
 ## Local review
 
 The project is a separate clone named `coding-adventure`, on branch `ellis/portfolio-polish`. It retains the original repository history through `c3750cd`. The surrounding website project was not modified.
@@ -63,7 +65,7 @@ The personal repository is now [eppm27/coding-adventure](https://github.com/eppm
 7. Verify `/`, `/escaperoom.html`, `/chooseyouradventure.html`, `/codebuilder.html`, `/debugdash.html`, and `/creativelab.html`, complete all five games, refresh the result records, and check an unknown URL.
 8. Add the actual deployment URL under README → Play. No placeholder production URL is supplied.
 
-Vercel’s static-site behavior serves these files without a server runtime. `404.html` supplies a recovery page for unknown paths; no rewrite/catch-all router is needed. `.vercelignore` excludes tests and development documentation. Vercel hosting itself has not been exercised because deployment was not authorized.
+Vercel’s static-site behavior serves these files without a server runtime. `404.html` supplies a recovery page for unknown paths; no rewrite/catch-all router is needed. `.vercelignore` excludes tests and development documentation. The personal version has since been deployed by the user; the settings above remain a reference for future deployments.
 
 References: [Vercel build configuration](https://vercel.com/docs/builds/configure-a-build) and [static-site 404 guidance](https://vercel.com/kb/guide/custom-404-page).
 
@@ -77,7 +79,7 @@ A browser-based coding game for students with five modes spanning coding quizzes
 
 ## Remaining limitations
 
-- No hosted URL exists yet; production smoke tests await an authorized deployment.
+- All six public HTML routes returned HTTP 200 on 14 September 2026. Full gameplay QA is recorded for the local build; hosted end-to-end gameplay has not been repeated.
 - Scores are local to a browser and can be cleared or edited; they are not verified competitive records.
 - Refresh intentionally starts a new run; it preserves records/preferences, not in-progress sessions.
 - Modern browsers supporting ES modules and native `<dialog>` are required.

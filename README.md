@@ -6,7 +6,9 @@ A browser-based coding game where students learn programming concepts through in
 
 ## Play
 
-A live deployment has not been created yet. Run locally below, or follow the [Vercel guide](docs/HANDOFF.md#vercel-deployment-after-approval).
+[Play Coding Adventure](https://coding-adventure-sigma.vercel.app/)
+
+No account or download required.
 
 ## Game Modes
 

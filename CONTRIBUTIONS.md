@@ -25,7 +25,7 @@ The old implementation and media were removed from the active tree after inspect
 
 ## Repository boundary
 
-The original remote is named `upstream`, with its local push URL set to `DISABLED` as an accidental-push guard. The personal repository is [eppm27/coding-adventure](https://github.com/eppm27/coding-adventure). Publication to this separate repository was authorized on 14 September 2026. No deployment has been performed.
+The original remote is named `upstream`, with its local push URL set to `DISABLED` as an accidental-push guard. The personal repository is [eppm27/coding-adventure](https://github.com/eppm27/coding-adventure). Publication to this separate repository was authorized on 14 September 2026. The personal version is live at [Coding Adventure](https://coding-adventure-sigma.vercel.app/).
 
 See [docs/HANDOFF.md](docs/HANDOFF.md) for the personal-repository workflow and deployment instructions. Keep this origin statement, the README attribution, and original history with the personal version.
 
